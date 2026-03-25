@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>AMS</h2>
+        <ul>
+            <li><a href="#"><i class="fa fa-home"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fa fa-check"></i> Attendance</a></li>
+            <li><a href="#"><i class="fa fa-users"></i> Students</a></li>
+            <li><a href="#"><i class="fa fa-chart-line"></i> Reports</a></li>
+            <li><a href="#"><i class="fa fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <h1>Dashboard</h1>
+            <div class="user">
+                <i class="fa fa-user-circle"></i> Admin
+            </div>
+        </div>
+
+        <!-- CARDS -->
+         <div class="subjects">
+
+{% for subject in subjects %}
+    <div class="subject-card" onclick="openSubject('{{ subject.id }}')">
+        <div class="card-top"></div>
+
+        <div class="card-body">
+            <div class="icon">
+                <i class="fa fa-book"></i>
+            </div>
+
+            <h3>{{ subject.name }}</h3>
+            <p>View attendance</p>
+        </div>
+
+        <div class="card-bottom">
+            <button>Open</button>
+        </div>
+    </div>
+{% endfor %}
+
+</div>
+         
+            
+           
+
+        
+        
+
+        
+            
+
+</div>
+         
+      
+
+</div>
+        
+                
+    </div>
+
+</div>
+
+</body>
+</html>
+<script>
+function openSubject(id) {
+    window.location.href = "/subject/" + id;
+}
+</script>
